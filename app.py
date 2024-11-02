@@ -1,10 +1,10 @@
 import streamlit as st
-from big_mind_mapping import bmm
-from reverse_brainstorm import rb
-from role_storming import rs
-from scamper import sc
-from six_hats import sh
-from starburtsting import sb
+from methods.big_mind_mapping import bmm
+from methods.reverse_brainstorm import rb
+from methods.role_storming import rs
+from methods.scamper import sc
+from methods.six_hats import sh
+from methods.starburtsting import sb
 # Make the layout wide for better display
 st.set_page_config(layout="wide")
 
