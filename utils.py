@@ -5,6 +5,14 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import AIMessage
 from langchain_core.output_parsers import StrOutputParser
 
+#import the OpenAI API key from the .env file
+load_dotenv()
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# LLMs
+llm = ChatOpenAI(model="gpt-4o-mini", api_key=OPENAI_API_KEY)
+gen_ideas_prompt = ChatPromptTemplate.from_template("""You are a clever work assistant that helps people generate ideas for their project, reasearch, paper or any other creative work. You'll be having a query from the user and you need to generate 5 (five) diverse, detailed, developed, precise and significant ideas related to the context of the query. The ideas should not be redundant and repetitive, be creative and unique. The ideas must be formatted in the form of bullet points without titles and without bold text.
+Query:{query}
+List of 5 bullet points ideas:""")
 
 
 # parsers
@@ -50,8 +58,22 @@ class TreeNode:
     def add_child(self, child_node):
         self.children.append(child_node)
 
-# print the tree
-def print_tree(node, indent=0):
-    print('  ' * indent + node.idea)
+class InitialIdeaChain:
+    def __init__(self):
+        self.gen_ideas_prompt = gen_ideas_prompt
+        self.llm = llm
+        self.chain = self.gen_ideas_prompt | self.llm | parse_bullet_points
+
+    def invoke(self, query):
+        self.initial_ideas = self.chain.invoke({"query": query})
+        return self.initial_ideas
+
+# print the tree creating a string representation of the tree
+def print_tree(node, indent=0, is_root=True):
+    # Skip the root node by only printing its children
+    string = ""
+    if not is_root:
+        string += "  " * indent + "- " + node.idea + "\n"
     for child in node.children:
-        print_tree(child, indent + 1)
+        string += print_tree(child, indent + 1, is_root=False)
+    return string
