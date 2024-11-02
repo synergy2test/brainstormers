@@ -48,10 +48,10 @@ class TreeNode:
 
 ## Roadmap
 Future improvements include:
--[ ] Streamable output for real-time interaction
--[ ] Deployment on HuggingFace
--[ ] Integration with local LLMs
--[ ] Optimized runtime for Big Mind Mapping
+- [ ] Streamable output for real-time interaction
+- [ ] Deployment on HuggingFace
+- [ ] Integration with local LLMs
+- [ ] Optimized runtime for Big Mind Mapping
 
 ## Cost
 This app is cost-effective, with Big Mind Mapping sessions costing around $0.01 per session, making it accessible and powerful for brainstorming needs.
