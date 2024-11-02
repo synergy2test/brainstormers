@@ -12,6 +12,8 @@ This app provides various brainstorming techniques:
 
 ## Project Pipeline
 The app’s pipeline is streamlined: instead of using agents or Langraph, it runs specific chains based on the selected brainstorming method. Each method initiates a structured chain tailored to the user’s choice. The output is organized into a tree of ideas, with an initial layer of ideas followed by deeper expansions as per each method's principles. For example, the Starbursting method generates detailed questions for each initial idea, followed by answers.
+![Screenshot from 2024-11-02 19-00-36](https://github.com/user-attachments/assets/325d4c48-c1f8-4ea9-9744-b795f38f5964)
+
 Results are presented as a hierarchical tree of ideas:
 ```python
 class TreeNode:
@@ -22,6 +24,8 @@ class TreeNode:
     def add_child(self, child_node):
         self.children.append(child_node)
 ```
+
+## Video Demo
 
 ## Usage
 
