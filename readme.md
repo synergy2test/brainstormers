@@ -16,6 +16,10 @@ The app’s pipeline is streamlined: instead of using agents or Langraph, it run
 
 ## Video Demo
 
+
+https://github.com/user-attachments/assets/681a3a87-da52-482d-904f-3731c9679ca1
+
+
 ## Usage
 
 1. **Clone the repository**:
