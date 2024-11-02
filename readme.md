@@ -1,4 +1,4 @@
-# 🧠 Brainstorming App
+# 🧠 Brainstormers
 
 Built with **LangChain** and **Streamlit**, this tool enhances your brainstorming experience by offering curated, optimized chains inspired by real-world effective brainstorming techniques. Rather than using ChatGPT directly, this app allows you to engage with structured brainstorming methods, guiding you to explore ideas comprehensively and maximize the benefits of LLM-driven brainstorming.
 
