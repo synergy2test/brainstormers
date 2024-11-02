@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import AIMessage
-from utils import parse_bullet_points, TreeNode
+from utils import parse_bullet_points, TreeNode, print_tree
 
 #import the OpenAI API key from the .env file
 load_dotenv()
@@ -56,3 +56,6 @@ for idea in initial_ideas:
         for further_expanded_idea in further_expanded_ideas:
             great_grandchild_node = TreeNode(further_expanded_idea)
             grandchild_node.add_child(great_grandchild_node)
+
+# Print the tree
+print_tree(root)

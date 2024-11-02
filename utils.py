@@ -49,3 +49,9 @@ class TreeNode:
 
     def add_child(self, child_node):
         self.children.append(child_node)
+
+# print the tree
+def print_tree(node, indent=0):
+    print('  ' * indent + node.idea)
+    for child in node.children:
+        print_tree(child, indent + 1)

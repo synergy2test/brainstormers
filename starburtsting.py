@@ -4,7 +4,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import AIMessage
 from langchain_core.output_parsers import StrOutputParser
-from utils import parse_bullet_points, TreeNode
+from utils import parse_bullet_points, TreeNode, print_tree
 
 
 
@@ -54,11 +54,7 @@ for idea in initial_ideas:
         answer = sb_answer_chain.invoke({"question": question, "idea": idea})
         great_grandchild_node = TreeNode(answer)
         grandchild_node.add_child(great_grandchild_node)
-# print the tree
-def print_tree(node, indent=0):
-    print('  ' * indent + node.idea)
-    for child in node.children:
-        print_tree(child, indent + 1)
+
 
 print_tree(root_sb)
 
